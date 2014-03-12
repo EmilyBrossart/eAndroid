@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Quiz Bowl Practice</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="welcome">Welcome to the Quiz Bowl Trivia App</string>
+    <string name="button_string">Press to Start</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="question_statement">Question:</string>
+    <string name="answer_statement">Answer:</string>
+    <string name="answer_hint">Type answer here</string>
+    <string name="check_button">Check</string>
+    <string name="next_button">Next</string>
+
+</resources>
