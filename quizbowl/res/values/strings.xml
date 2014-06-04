@@ -12,5 +12,8 @@
     <string name="answer_hint">Type answer here</string>
     <string name="check_button">Check</string>
     <string name="next_button">Next</string>
+    <string name="question">What is 2+2?</string>
+    <string name="correct">Correct!</string>
+    <string name="incorrect">Incorrect:\nCorrect answer is</string>
 
 </resources>

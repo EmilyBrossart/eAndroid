@@ -1,17 +1,37 @@
 package com.brossart.quizbowl;
 
+
+
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
+	
+	private Button mButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		 mButton = (Button) findViewById(R.id.button1);
+	        mButton.setOnClickListener(new OnClickListener(){
+	        	@Override
+	        	public void onClick(View v){
+	        		TextView temp = (TextView) v.findViewById(R.id.textView1);
+					Intent intent = new Intent(v.getContext(),SecondActivity.class);
+
+					v.getContext().startActivity(intent);
+	        	}
+	        	
+	        });
 	}
 
 	@Override
@@ -20,16 +40,10 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
-
-
-	View.OnClickListener OpenNewActivity = new View.OnClickListener() {
 	
-		@Override
-		public void onClick(View v) {
-			Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-			startActivity(intent);
-		
-	}
-	};}
+	
+
+	
+	
+	};
 
