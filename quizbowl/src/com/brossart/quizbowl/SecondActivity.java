@@ -1,5 +1,9 @@
 package com.brossart.quizbowl;
 
+import java.util.ArrayList;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -14,15 +18,18 @@ import android.widget.TextView;
 public class SecondActivity extends Activity {
 	
 	private Button gButton;
-	private String question1 = "What is 2 + 2?";
+	private String question = "What is 2 + 2?";
 	private String answer = "4";
+	TreeMap<String, String> dataSet = new TreeMap<String, String>();
+	String[] questionSet;
+	double r = Math.random();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_second);
-		final TextView question = (TextView) findViewById(R.id.textView3);
-		question.setText(question1);
+		final TextView newQuestion = (TextView) findViewById(R.id.textView3);
+		newQuestion.setText(question);
 		final TextView goat = (TextView) findViewById(R.id.textView4);
 		final TextView sheep = (TextView) findViewById(R.id.textView5);
 		final EditText ET = (EditText) findViewById(R.id.editText1);
@@ -45,7 +52,11 @@ public class SecondActivity extends Activity {
         gButton.setOnClickListener(new OnClickListener(){
         	@Override
         	public void onClick(View v){
-        		question.setText("What is the capital of Peru?");
+        		int n = (int)r*dataSet.size();
+        		questionSet = new String[dataSet.size()];
+        		questionSet = (String[]) dataSet.keySet().toArray();
+        		question = questionSet[n];
+        		newQuestion.setText("question");
         		ET.setText("");
         		goat.setText("");
         		sheep.setText("");
